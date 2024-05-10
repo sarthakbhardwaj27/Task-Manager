@@ -34,6 +34,16 @@ app.get('/files/:filename',(req,res)=>{
     res.render('content', {title: req.params.filename.split('.')[0].split('_').join(' ') , content: data})
   })
 })
+
+app.get('/edit/:filename',(req,res)=>{
+  fs.readFile(`./files/${req.params.filename}`,"utf-8", (err,data)=>{
+    if(err){
+      console.log(err)
+    }
+    res.render('edit', {title: req.params.filename.split('.')[0].split('_').join(' ') , content: data})
+  })
+})
+
 app.post('/create', (req, res) => {
   console.log(req.body.title);
   console.log(req.body.details);
@@ -46,6 +56,17 @@ app.post('/create', (req, res) => {
   }
   res.redirect('/')
 })
+
+// app.post('/edit',(req,res)=>{
+//   console.log(req.body.content)
+//   fs.writeFile(`./files/${req.body.content.trim().split(' ').join('_')}.txt`,req.body.content, (err)=>{
+//     if(err){
+//       console.log(err)
+//     }
+//   })
+//   console.log(`updated ${req.body.content.trim().split(' ').join('_')}.txt`)
+//   res.redirect('/')
+// })
 app.listen(port, ()=>{
   console.log(`listening on ${port}`)
 });

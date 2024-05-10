@@ -23,7 +23,10 @@
         <% for(let i = 0; i < fileTitles.length; i++) { %>
           <div class="task w-72 bg-zinc-800 px-3 py-4 text-white hover:border-solid hover:border-2 hover:border-sky-500">
             <h1 class="text-3xl tracking-tighter"><%= fileTitles[i] %></h1>
-            <a class="text-blue-500 inline-block mt-3" href="/files/<%= fileNames[i] %>">Read More..</a>
+            <div class="flex justify-between">
+              <a class="text-blue-500 inline-block mt-3" href="/files/<%= fileNames[i] %>">Read More..</a>
+              <a class="text-blue-500 inline-block mt-3 px-2" href="/edit/<%= fileNames[i] %>">Edit</a>
+            </div>
           </div>
         <% } %>
       <% } else { %>

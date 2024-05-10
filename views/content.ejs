@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
   <div class="main w-full min-h-screen bg-zinc-900 p-10">
-    <a class="text-blue-500 text-3xl" href="/">< Return to Home</a>
-    <div class="title uppercase text-3xl text-zinc-400 mt-10">
-      <%= title %>
-    </div>
-    <div class="content bg-zinc-800 text-white mt-3 p-5 rounded">
-      <%= content %>
-    </div>
+    <a class="text-blue-500 text-3xl" href="/">
+      < Return to Home</a>
+        <div class="title bg-zinc-800 text-2xl rounded-md text-zinc-500 p-5 mt-10">
+          <h2>
+            <%= title %>
+          </h2>
+        </div>
+        <div class="content bg-zinc-800 rounded-md text-white mt-3 p-5 rounded">
+          <textarea class="block w-full rounded-md bg-zinc-800 mt-2 p-5" id="content" name="content"
+            rows="10"><%= content %></textarea>
+        </div>
   </div>
 </body>
+
 </html>
