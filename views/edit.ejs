@@ -14,7 +14,8 @@
         <h2>Edit Task: <%= title %></h2>
       </div>
       <div class="content bg-zinc-800 rounded-md text-white mt-3 p-5 rounded">
-        <input type="tex" class="block w-full rounded-md bg-zinc-800 mt-2 p-5" id="content" name="content" rows="10"><%= content %></textarea>
+        <input type="hidden" name="taskname" value="<%= title %>">
+        <textarea class="block w-full rounded-md bg-zinc-800 mt-2 p-5" id="content" name="content"><%= content %></textarea>
       </div>
       <button type="submit" class="bg-blue-600 px-5 py-2 rounded-md mt-5">Save Changes</button>
     </form>

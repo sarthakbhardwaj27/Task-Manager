@@ -57,16 +57,19 @@ app.post('/create', (req, res) => {
   res.redirect('/')
 })
 
-// app.post('/edit',(req,res)=>{
-//   console.log(req.body.content)
-//   fs.writeFile(`./files/${req.body.content.trim().split(' ').join('_')}.txt`,req.body.content, (err)=>{
-//     if(err){
-//       console.log(err)
-//     }
-//   })
-//   console.log(`updated ${req.body.content.trim().split(' ').join('_')}.txt`)
-//   res.redirect('/')
-// })
+app.post('/edit',(req,res)=>{
+  // console.log(req.body)
+  const filename = req.body.taskname.split(' ').join('_') + '.txt'
+  // console.log(filename)
+  fs.writeFile(`./files/${filename}`,req.body.content, (err)=>{
+    if(err){
+      console.log(err)
+    }
+  })
+  console.log(`updated ${filename}`)
+  res.redirect('/')
+})
+
 app.listen(port, ()=>{
   console.log(`listening on ${port}`)
 });
